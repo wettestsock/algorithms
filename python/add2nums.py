@@ -22,3 +22,20 @@ class node:  #linked list in python
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+    
+    
+#note: != and is not are not same
+# != compares values while is not checks for pointers
+def list_print(list_head: node):
+    c = list_head
+    while (c.next is not None):
+        print(c.val, '-> ', end ='')
+        c = c.next 
+    print(c.val, '\n')
+
+d = node(4)       
+c = node(2, d)       
+b = node(32, c)       
+a = node(4, b)        
+
+list_print(a)
