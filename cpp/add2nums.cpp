@@ -58,7 +58,7 @@ std::ostream& operator<<(std::ostream& out, node* head) {
 
 class solution {
     public:
-    node* add_two_nums(node* l1, node* l2) {
+    static node* add_two_nums(node* l1, node* l2) {
         node* temp = new node(); // for forward leftover edge cases
 
         node* c = temp;
