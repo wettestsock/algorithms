@@ -39,14 +39,41 @@ class Solution:
         
         def backtrack(openN, closeN):
             if openN == closeN == n: #occurs for each string
-                output.append(''.join(stack))
-                
+                output.append(''.join(stack)) # ''.join() makes a list into a string
+                return
             
-
-
+            if openN < n:
+                stack.append('(')
+                backtrack(openN + 1, closeN)
+                stack.pop()
+            
+            if closeN < openN:
+                stack.append(')')
+                backtrack(openN, closeN +1)
+                stack.pop()
+        
+        backtrack(0,0)
+        return output
+            
+def other_sol(n:int) -> list[str]:
+    output = []
+    
+    def recurs(openN, closeN, temp=''): #temp is output string to be put into output
+        if not openN and not closeN: #if both are 0, then appends the string to output
+            output.append(temp) 
+        
+        if openN > 0:
+            recurs(openN -1, closeN, temp+'(')
+        if openN < closeN:
+            recurs(openN, closeN-1, temp+')')
+    
+    recurs(n,n)
+    return output
+        
 
 print(Solution.generateParenthesis(Solution, 3))
 print(Solution.generateParenthesis(Solution, 2))
 print(Solution.generateParenthesis(Solution, 1))
-print(Solution.generateParenthesis(Solution, 10))
-print(Solution.generateParenthesis(Solution, 22))
+print(other_sol(3))
+print(other_sol(2))
+print(other_sol(1))
