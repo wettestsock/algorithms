@@ -38,3 +38,5 @@ class Solution:
 
 
 print(Solution.sub_str_len(Solution, 'abcdabcdc'))
+
+
