@@ -37,6 +37,7 @@ class Solution{
                 //if it's NOT the last char and next is bigger
                 result -= curr;
             } else {
+                //if next is smaller
                 result += curr;
             }
         }
@@ -44,6 +45,8 @@ class Solution{
     }
 };  
 
+
+//operator overloading for forward lists 
 template<typename T>
 std::ostream& operator<<(std::ostream& output, const std::forward_list<T>& list){
     for(const char& i : list){
@@ -53,13 +56,12 @@ std::ostream& operator<<(std::ostream& output, const std::forward_list<T>& list)
 
 };
 
-
 int main(){
     //returns 998
     std::cout << Solution::rom_to_int("CMXCVIII")<<'\n';
     std::forward_list<char> roman_nums;
     roman_nums.assign({'C','M','X','C','V','I','I','I'});
     std::cout<<roman_nums;
-    
+
 
 };
