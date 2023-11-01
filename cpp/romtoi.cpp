@@ -50,6 +50,7 @@ class Solution{
 template<typename T>
 std::ostream& operator<<(std::ostream& output, const std::forward_list<T>& list){
     for(const char& i : list) output<< i;
+    
     return output;
 
 };
