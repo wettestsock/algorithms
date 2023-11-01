@@ -1,6 +1,6 @@
 #include <iostream>
 #include <forward_list>
-
+#define N '\n'
 /*
 ROMAN INTEGER TO NUMBER
 
@@ -49,17 +49,21 @@ class Solution{
 //operator overloading for forward lists 
 template<typename T>
 std::ostream& operator<<(std::ostream& output, const std::forward_list<T>& list){
-    for(const char& i : list) output<< i;
-    
+    for(const T& i : list) output<< i;
+
     return output;
 
 };
 
 int main(){
     //returns 998
-    std::cout << Solution::rom_to_int("CMXCVIII")<<'\n';
+    std::cout << Solution::rom_to_int("CMXCVIII")<<N;
     std::forward_list<char> roman_nums;
     roman_nums.assign({'C','M','X','C','V','I','I','I'});
+    std::forward_list<int> test;
+    test.assign(5,3); //5 elements each of 3
+    test.assign(6,2); // reassigns the linked list
+    std::cout <<test << N; 
     std::cout<<roman_nums;
 
 
