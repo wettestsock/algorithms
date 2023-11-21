@@ -48,6 +48,7 @@ class node:
             self.data = data 
             
         else:
+            #NOTE: the binary tree has no duplicates because neither condition will be true
             if data < self.data: #inser to the left
                 if self.left is None: # if theres nothing then put it
                     self.left = node(data) #new node using the data
@@ -63,11 +64,17 @@ class node:
                 
                 self.right.insert(data) #recursiveee
 
+    def delete
         
 
 # printing all nodes InOrder
 
 '''
+#   DEPTH FIRST SEARCH
+# aka vertical search 
+# searches until end of branch and doesnt move until very end
+
+
 lets say a tree like this
 
         b (root)
@@ -119,6 +126,21 @@ def post_order_print(curr:node):
         pre_order_print(curr.right) 
         pre_order_print(curr.left)
 
+
+'''
+ BREADTH FIRST APPROACH
+ aka level first approach
+ goes horizontally
+
+
+basically a queue
+each time add children of a node, pop the head from the queue
+
+    
+'''
+
+
+
 # makes sure that the python file is NOT imported
 if __name__ == '__main__':
 
@@ -129,10 +151,12 @@ if __name__ == '__main__':
 
     in_order_print(root) # a b c d e f g h i j k 
     print('\n')
-    
+
     pre_order_print(root) # g c b a e d f i h j k
     print('\n')
-    
+
     post_order_print(root) # g i h j k z c b a e d f
     print('\n')
-    
+
+
+
