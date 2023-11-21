@@ -112,7 +112,12 @@ def pre_order_print(curr:node):
         pre_order_print(curr.right)    
 
 def post_order_print(curr:node):
-    
+    if curr is None:
+        return
+    else:
+        print(curr.data, end = ' ')
+        pre_order_print(curr.right) 
+        pre_order_print(curr.left)
 
 # makes sure that the python file is NOT imported
 if __name__ == '__main__':
@@ -124,4 +129,10 @@ if __name__ == '__main__':
 
     in_order_print(root) # a b c d e f g h i j k 
     print('\n')
+    
     pre_order_print(root) # g c b a e d f i h j k
+    print('\n')
+    
+    post_order_print(root) # g i h j k z c b a e d f
+    print('\n')
+    
