@@ -63,9 +63,25 @@ class node:
                     self.right = node(data)
                 
                 self.right.insert(data) #recursiveee
+    
+    def remove(self, value):
+        if self is None:
+            return
+        if self.data == value:
+            print('deleting node:', curr.data)
+        self.left.remove(value)
+        self.right.remove(value)
+        del self
 
-    def delete
-        
+def delete(curr:node):
+    if curr is None:
+        return
+
+
+    print('deleting node:', curr.data)
+    delete(curr.left)
+    delete(curr.right)
+    del curr
 
 # printing all nodes InOrder
 
@@ -157,6 +173,9 @@ if __name__ == '__main__':
 
     post_order_print(root) # g i h j k z c b a e d f
     print('\n')
+
+    root.remove('h')
+    #delete(root)
 
 
 
