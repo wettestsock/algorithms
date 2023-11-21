@@ -76,11 +76,25 @@ lets say a tree like this
        \
         e
 
-starts at root, prints left, then prints the current, then prints the right
-in ex - prints a e b c 
+INORDER:
+left, root, right
 
+starts at root, prints left, then prints the current, then prints the right
+in ex - prints a b c e
+quickly sorts in ascending order 
+
+
+PREORDER:
+root, left, right 
+
+
+POSTORDER:
+root, right, left
+
+b , c , a
 
 '''
+#prints from a node
 def in_order_print(curr:node):
     if curr is None:
         return
@@ -89,11 +103,25 @@ def in_order_print(curr:node):
     print(curr.data, end = ' ')
     in_order_print(curr.right)
 
+def pre_order_print(curr:node):
+    if curr is None:
+        return
+    else:
+        print(curr.data, end = ' ')
+        pre_order_print(curr.left)
+        pre_order_print(curr.right)    
+
+def post_order_print(curr:node):
+    
+
 # makes sure that the python file is NOT imported
 if __name__ == '__main__':
 
     #can do each individual
     #but implemented pseudo constructor overloading
     root = node('gcbaedfihjk')
+    root.insert('z')
 
-    in_order_print(root)
+    in_order_print(root) # a b c d e f g h i j k 
+    print('\n')
+    pre_order_print(root) # g c b a e d f i h j k
