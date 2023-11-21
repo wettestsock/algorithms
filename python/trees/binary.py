@@ -10,5 +10,20 @@ every left node gets smaller whereas every right node gets bigger
 
 
 BINARY SEARCH TREE 
-TODO: implement a binary search tree
+TODO: implement a binary search tree (BST algorithm)
 '''
+
+# node itself
+class node:
+    #init the head node
+    def __init__(self, data):
+        self.data = data # must have data
+        self.left = None  # default
+        self.right = None # default none
+        #basically linked list
+
+    def insert(self,data):
+        if(self.data is None):
+            self.data = data
+            
+
