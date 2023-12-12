@@ -44,6 +44,7 @@
         "xutility": "cpp",
         "vector": "cpp",
         "string": "cpp",
-        "forward_list": "cpp"
+        "forward_list": "cpp",
+        "string_view": "cpp"
     }
 }
