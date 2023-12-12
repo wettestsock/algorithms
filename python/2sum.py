@@ -25,7 +25,7 @@ assigning the difference of target - index to the index
 class Solution:
     def two_sum(self, input:list[int], target:int) -> list[int]:
         prevMap = df({})
-
+        
         for i, n in enumerate(input):
             #NOTE: enumerate returns the val and its index
             # i is index, n is the number in that index
